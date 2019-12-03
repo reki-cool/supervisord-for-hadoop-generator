@@ -1,0 +1,99 @@
+property:
+  base:
+    # 当前这个工程的根路径
+    current-project-path: C:\Users\都颜汗\IdeaProjects\supervisord-for-hadoop-generator
+    # 用来生成代码的模板的路径
+    template-file-path: ${property.base.current-project-path}\src\main\resources\templateFile
+
+  # 终点配置项
+  common:
+    # 服务器中保存监控脚本的目录的父路径
+    monitor-dir-parent-path: /home/hadoop
+    # 服务器中保存pid文件的目录的父路径
+    pid-dir-parent-path: /home/hadoop/hadoop-2.8.4
+    # 服务器中保存日志文件的目录的父路径
+    log-dir-parent-path: /etc/supervisor
+    # 生成的程序的supervisor配置文件中命令执行时所使用的用户
+    supervisord-conf-user: root
+    # 生成的程序的监控脚本中命令执行时所使用的用户
+    monitor-shell-user: hadoop
+
+  generator:
+    # 生成的程序的supervisor配置文件保存路径
+    supervisord-conf-output-path: ${property.base.current-project-path}\src\main\resources\output\conf
+    # 生成的程序的监控脚本保存路径
+    monitor-shell-output-path: ${property.base.current-project-path}\src\main\resources\output\monitor
+
+  # 重点配置项
+  applications:
+    - application-name: zookeeper_server
+      supervisord-conf:
+        command: /bin/bash ${property.common.monitor-dir-parent-path}/monitor/${property.applications[0].application-name}_monitor.sh
+        user: ${property.common.supervisord-conf-user}
+      monitor-shell:
+        pid-file-path: ${property.common.pid-dir-parent-path}/process_id/${property.applications[0].application-name}.pid
+        command: /home/hadoop/zookeeper-3.4.8/bin/zkServer.sh start
+        user: ${property.common.monitor-shell-user}
+
+    - application-name: hadoop-hadoop-journalnode
+      supervisord-conf:
+        command: /bin/bash ${property.common.monitor-dir-parent-path}/monitor/${property.applications[1].application-name}_monitor.sh
+        user: ${property.common.supervisord-conf-user}
+      monitor-shell:
+        pid-file-path: ${property.common.pid-dir-parent-path}/process_id/${property.applications[1].application-name}.pid
+        command:
+        user: ${property.common.monitor-shell-user}
+
+    - application-name: hadoop-hadoop-namenode
+      supervisord-conf:
+        command: /bin/bash ${property.common.monitor-dir-parent-path}/monitor/${property.applications[2].application-name}_monitor.sh
+        user: ${property.common.supervisord-conf-user}
+      monitor-shell:
+        pid-file-path: ${property.common.pid-dir-parent-path}/process_id/${property.applications[2].application-name}.pid
+        command:
+        user: ${property.common.monitor-shell-user}
+
+    - application-name: hadoop-hadoop-zkfc
+      supervisord-conf:
+        command: /bin/bash ${property.common.monitor-dir-parent-path}/monitor/${property.applications[3].application-name}_monitor.sh
+        user: ${property.common.supervisord-conf-user}
+      monitor-shell:
+        pid-file-path: ${property.common.pid-dir-parent-path}/process_id/${property.applications[3].application-name}.pid
+        command:
+        user: ${property.common.monitor-shell-user}
+
+    - application-name: hadoop-hadoop-datanode
+      supervisord-conf:
+        command: /bin/bash ${property.common.monitor-dir-parent-path}/monitor/${property.applications[4].application-name}_monitor.sh
+        user: ${property.common.supervisord-conf-user}
+      monitor-shell:
+        pid-file-path: ${property.common.pid-dir-parent-path}/process_id/${property.applications[4].application-name}.pid
+        command:
+        user: ${property.common.monitor-shell-user}
+
+    - application-name: yarn-hadoop-resourcemanager
+      supervisord-conf:
+        command: /bin/bash ${property.common.monitor-dir-parent-path}/monitor/${property.applications[5].application-name}_monitor.sh
+        user: ${property.common.supervisord-conf-user}
+      monitor-shell:
+        pid-file-path: ${property.common.pid-dir-parent-path}/process_id/${property.applications[5].application-name}.pid
+        command:
+        user: ${property.common.monitor-shell-user}
+
+    - application-name: yarn-hadoop-nodemanager
+      supervisord-conf:
+        command: /bin/bash ${property.common.monitor-dir-parent-path}/monitor/${property.applications[6].application-name}_monitor.sh
+        user: ${property.common.supervisord-conf-user}
+      monitor-shell:
+        pid-file-path: ${property.common.pid-dir-parent-path}/process_id/${property.applications[6].application-name}.pid
+        command:
+        user: ${property.common.monitor-shell-user}
+
+    - application-name: mapred-hadoop-historyserver
+      supervisord-conf:
+        command: /bin/bash ${property.common.monitor-dir-parent-path}/monitor/${property.applications[7].application-name}_monitor.sh
+        user: ${property.common.supervisord-conf-user}
+      monitor-shell:
+        pid-file-path: ${property.common.pid-dir-parent-path}/process_id/${property.applications[7].application-name}.pid
+        command:
+        user: ${property.common.monitor-shell-user}
