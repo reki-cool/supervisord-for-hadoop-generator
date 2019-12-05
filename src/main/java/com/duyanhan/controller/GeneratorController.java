@@ -48,6 +48,6 @@ public class GeneratorController {
             mvcHandler.generateMonitorShell(applicationName, monitorShell.getPidFilePath(), monitorShell.getCommand(), monitorShell.getUser(), generator.getMonitorShellOutputPath());
         }
 
-        return generatorProperties.toString();
+        return "各守护进程的监控脚本&&配置文件已经生成完毕！";
     }
 }

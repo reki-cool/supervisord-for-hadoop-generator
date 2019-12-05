@@ -21,5 +21,9 @@
         监控脚本在监控守护进程时，使用的应该是正常启动守护进程时使用的用户，
         所以应该和程序的使用用户一致；
         ```
+## 使用办法
+访问: http://localhost:8080/generate  
+将生成的```src\main\resources\output```路径下的```monitor```目录拷贝到服务器的```${monitor-dir-parent-path}```中去;  
+同时，将生成的```src\main\resources\output```路径下的```conf```目录拷贝到服务器supervisor守护进程可以读取的配置目录中；
 
 
