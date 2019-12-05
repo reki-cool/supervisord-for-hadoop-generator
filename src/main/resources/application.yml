@@ -31,7 +31,9 @@ property:
         user: ${property.common.supervisord-conf-user}
       monitor-shell:
         user: ${property.common.monitor-shell-user}
+        # 填写守护进程的PID文件保存位置
         pid-file-path:
+        # 填写守护进程的启动命令
         command:
 
     - application-name: hadoop-hadoop-journalnode
@@ -40,7 +42,9 @@ property:
         user: ${property.common.supervisord-conf-user}
       monitor-shell:
         user: ${property.common.monitor-shell-user}
+        # 填写守护进程的PID文件保存位置
         pid-file-path:
+        # 填写守护进程的启动命令
         command:
 
     - application-name: hadoop-hadoop-namenode
@@ -49,7 +53,9 @@ property:
         user: ${property.common.supervisord-conf-user}
       monitor-shell:
         user: ${property.common.monitor-shell-user}
+        # 填写守护进程的PID文件保存位置
         pid-file-path:
+        # 填写守护进程的启动命令
         command:
 
     - application-name: hadoop-hadoop-zkfc
@@ -58,7 +64,9 @@ property:
         user: ${property.common.supervisord-conf-user}
       monitor-shell:
         user: ${property.common.monitor-shell-user}
+        # 填写守护进程的PID文件保存位置
         pid-file-path:
+        # 填写守护进程的启动命令
         command:
 
     - application-name: hadoop-hadoop-datanode
@@ -67,7 +75,9 @@ property:
         user: ${property.common.supervisord-conf-user}
       monitor-shell:
         user: ${property.common.monitor-shell-user}
+        # 填写守护进程的PID文件保存位置
         pid-file-path:
+        # 填写守护进程的启动命令
         command:
 
     - application-name: yarn-hadoop-resourcemanager
@@ -76,7 +86,9 @@ property:
         user: ${property.common.supervisord-conf-user}
       monitor-shell:
         user: ${property.common.monitor-shell-user}
+        # 填写守护进程的PID文件保存位置
         pid-file-path:
+        # 填写守护进程的启动命令
         command:
 
     - application-name: yarn-hadoop-nodemanager
@@ -85,7 +97,9 @@ property:
         user: ${property.common.supervisord-conf-user}
       monitor-shell:
         user: ${property.common.monitor-shell-user}
+        # 填写守护进程的PID文件保存位置
         pid-file-path:
+        # 填写守护进程的启动命令
         command:
 
     - application-name: mapred-hadoop-historyserver
@@ -94,5 +108,7 @@ property:
         user: ${property.common.supervisord-conf-user}
       monitor-shell:
         user: ${property.common.monitor-shell-user}
+        # 填写守护进程的PID文件保存位置
         pid-file-path:
+        # 填写守护进程的启动命令
         command:

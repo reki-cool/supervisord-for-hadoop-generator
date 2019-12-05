@@ -12,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 @NoArgsConstructor
 @Data
 public class MonitorShell {
+    private String user;
     private String pidFilePath;
     private String command;
-    private String user;
 }
