@@ -9,10 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.duyanhan</groupId>
-    <artifactId>supervisord-for-hadoop-generator</artifactId>
+    <artifactId>supervisord-for-daemon-generator</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>supervisord-for-hadoop-generator</name>
-    <description>Demo project for Spring Boot</description>
+    <name>supervisord-for-daemon-generator</name>
 
     <properties>
         <java.version>1.8</java.version>
